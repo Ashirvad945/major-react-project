@@ -4,6 +4,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const {readdirSync} = require("fs");
 const { connectDb } = require("./connection");
+const cors = require("cors")
 
 //require the routes
 //import the route here
@@ -18,6 +19,8 @@ const app = express()
 connectDb()
 
 //Makingroute
+app.use(cors());
+app.use(express.json());
 app.get("/",(req,res)=>{
 res.send("<center><h1>Server is running guys...</h1></center>")
 });
