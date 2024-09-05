@@ -22,11 +22,36 @@ const Signup = () => {
       });
       const data = await res.data;
       if (data.success === true) {
+        //
+        //
+        //
+      
+        //
+        //
+        //
         setUsername("");
         setEmail("");
         setPassword("");
         setAccountType("");
         toast.success(data.message);
+
+
+        //
+        //
+        //
+      //   if (data.success) {
+      //     navigate("/login");
+      // }
+         //
+    if (data.role) {
+      navigate("/login"); // Navigate if role exists
+    } else {
+      console.error("Role not found in the response"); // Log if role is missing
+    }
+      
+        //
+        //
+        //
         navigate("/login");
       }
       console.log(data);
